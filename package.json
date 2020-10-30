@@ -1,7 +1,7 @@
 {
   "name": "serverstats-bot",
   "version": "1.0.0",
-  "description": " a rust servers stats discord bot",
+  "description": " a battlemetrics servers stats discord bot",
   "main": "app.js",
   "scripts": {
     "start-dev": "nodemon app.js",
