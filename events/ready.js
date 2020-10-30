@@ -5,7 +5,7 @@ const {
 } = require('../app')
 const chalk = require('chalk');
 const config = require('../config.json')
-const {GetServerPlayerCount} = require('battle-wrapper')
+const {Server} = require('battle-wrapper')
 
 // The startup event
 client.on('ready', () => {
@@ -14,7 +14,7 @@ client.on('ready', () => {
   console.log('   --  Status:', chalk.green('Online   '), '    --\n');
   console.log('================================');
   setInterval(() => {
-    GetServerPlayerCount(config.serverID).then((res) => {
+    Server.GetServerPlayerCount(config.serverID).then((res) => {
       client.user.setActivity(`${res.Population} Online`, {type: PLAYING})
     })
   }, 10000) // every 10 seconds
