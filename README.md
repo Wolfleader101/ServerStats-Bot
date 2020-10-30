@@ -14,7 +14,7 @@
 7. run `npm run start`
  
 
-# Config
+# Example Config
 
 `token`: Discord bot token 
 
