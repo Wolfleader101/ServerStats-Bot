@@ -4,22 +4,20 @@ const {
   client
 } = require('../app')
 const chalk = require('chalk');
-
-const streamers = ['zuckles', 'camomo_10', 'anomaly', 'shroud', 'iriskpvp', 'hjune', 'pookiebears', 'fitz', 'tobyonthetele', 'swaggersouls']
+const config = require('../config.json')
+const {GetServerPlayerCount} = require('battle-wrapper')
 
 // The startup event
 client.on('ready', () => {
   console.log('\n================================\n');
-  console.log('   --', chalk.red(' OCE Bot Working  '), '    --');
+  console.log('   --', chalk.red(' Server Stats Bot Working  '), '    --');
   console.log('   --  Status:', chalk.green('Online   '), '    --\n');
   console.log('================================');
   setInterval(() => {
-    let randStreamer = streamers[Math.floor(Math.random() * streamers.length)];
-    client.user.setActivity(`==help (${package.version})`, {
-      type: 'STREAMING',
-      url: `https://www.twitch.tv/${randStreamer}`
+    GetServerPlayerCount(config.serverID).then((res) => {
+      client.user.setActivity(`${res.Population} Online`, {type: PLAYING})
     })
-  }, 60000) // every 1 minute
+  }, 10000) // every 10 seconds
 
 
 });

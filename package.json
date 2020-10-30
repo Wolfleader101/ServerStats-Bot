@@ -1,7 +1,7 @@
 {
-  "name": "oce-bot",
-  "version": "1.1.1",
-  "description": "discord bot",
+  "name": "serverstats-bot",
+  "version": "1.0.0",
+  "description": " a rust servers stats discord bot",
   "main": "app.js",
   "scripts": {
     "start-dev": "nodemon app.js",
@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.0",
+    "battle-wrapper": "^0.10.2",
     "chalk": "^3.0.0",
     "discord.js": "^12.2.0",
     "node-fetch": "^2.6.1"
