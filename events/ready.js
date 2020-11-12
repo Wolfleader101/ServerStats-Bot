@@ -16,6 +16,9 @@ client.on('ready', () => {
   setInterval(() => {
     Server.GetServerPlayerCount(config.serverID).then((res) => {
       client.user.setActivity(`${res.Population} Online`, {type: 'PLAYING'})
+    }).catch(e => {
+      console.log(e)
+      console.log("The server specified is not online")
     })
   }, 10000) // every 10 seconds
 
